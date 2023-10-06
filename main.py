@@ -1,8 +1,9 @@
-import pyfiglet
-import os, random
+import os, random, time
+os.system("pip install discord.py==1.7.3")
+os.system("pip install pyfiglet")
 import discord
+import pyfiglet
 from discord.ext import commands
-import time
 from colorama import Fore, Style
 
 class colors:
@@ -21,17 +22,15 @@ class colors:
 banner = pyfiglet.figlet_format("Cloner")
 colors.banner(banner)
 colors.warning("\x1B[3mhttps://t.me/idkconsole\x1B[0m\n")
-
 colors.warning("Token")
 token = input()
-client = commands.Bot(command_prefix=".", case_insensitive=True,
-                      self_bot=True)
-
-client.remove_command('help')
-header = {"Authorization": f'Bot {token}'}
-os.system('cls' if os.name == 'nt' else 'clear')
 intents = discord.Intents.all()
 intents.members = True
+client = commands.Bot(command_prefix=".", case_insensitive=True,intents=intents,self_bot=True)
+client.remove_command('help')
+
+header = {"Authorization": f'Bot {token}'}
+os.system('cls' if os.name == 'nt' else 'clear')
 
 @client.event
 async def on_ready():
