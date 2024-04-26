@@ -29,7 +29,7 @@ intents.members = True
 client = commands.Bot(command_prefix=".", case_insensitive=True,intents=intents,self_bot=True)
 client.remove_command('help')
 
-header = {"Authorization": f'Bot {token}'}
+header = {"Authorization": f'{token}'}
 os.system('cls' if os.name == 'nt' else 'clear')
 
 @client.event
